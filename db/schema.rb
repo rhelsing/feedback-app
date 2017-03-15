@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170315171621) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "feedbacks", force: :cascade do |t|
     t.string   "user"
     t.text     "goals_for_week"
