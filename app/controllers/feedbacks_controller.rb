@@ -1,6 +1,6 @@
 class FeedbacksController < ApplicationController
   before_action :set_feedback, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: "admin", password: "hunter2", except: [:new, :create]
+  http_basic_authenticate_with name: "admin", password: "hunter2623", except: [:new, :create]
 
   # GET /feedbacks
   # GET /feedbacks.json
