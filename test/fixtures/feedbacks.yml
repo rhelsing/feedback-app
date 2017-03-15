@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: MyString
+  goals_for_week: MyText
+  last_week: MyText
+  something_small: MyText
+
+two:
+  user: MyString
+  goals_for_week: MyText
+  last_week: MyText
+  something_small: MyText

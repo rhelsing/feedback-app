@@ -1,0 +1,37 @@
+<%= form_for(feedback) do |f| %>
+  <% if feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+
+      <ul>
+      <% feedback.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :token %>
+    <%= f.text_field :token %>
+  </div>
+
+  <div class="field">
+    <%= f.label :goals_for_week %>
+    <%= f.text_area :goals_for_week %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_week %>
+    <%= f.text_area :last_week %>
+  </div>
+
+  <div class="field">
+    <%= f.label :something_small %>
+    <%= f.text_area :something_small %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

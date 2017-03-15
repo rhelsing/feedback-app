@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @feedback.user %>
+</p>
+
+<p>
+  <strong>Goals for week:</strong>
+  <%= @feedback.goals_for_week %>
+</p>
+
+<p>
+  <strong>Last week:</strong>
+  <%= @feedback.last_week %>
+</p>
+
+<p>
+  <strong>Something small:</strong>
+  <%= @feedback.something_small %>
+</p>
+
+<%= link_to 'Back', feedbacks_path %>
