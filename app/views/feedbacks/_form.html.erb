@@ -17,18 +17,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :goals_for_week %>
-    <%= f.text_area :goals_for_week %>
+    <label>What are your achievable goals for this week?</label>
+    <%= f.text_area :goals_for_week, size: "30x10" %>
   </div>
 
   <div class="field">
-    <%= f.label :last_week %>
-    <%= f.text_area :last_week %>
+    <label>Did you accomplish your goals from last week? If not, why not?</label>
+    <%= f.text_area :last_week, size: "30x10" %>
   </div>
 
   <div class="field">
-    <%= f.label :something_small %>
-    <%= f.text_area :something_small %>
+    <label>What is one small thing (or big if you wish) that you think would make our company or your work life better/more fufilling? (Rants are welcome!)</label>
+    <%= f.text_area :something_small, size: "30x10" %>
   </div>
 
   <div class="actions">
