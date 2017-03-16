@@ -2,7 +2,7 @@ class Feedback < ApplicationRecord
   attr_accessor :token
 
   def self.users
-    JSON.parse(ENV['EMPLOYEES'])
+    eval(ENV['EMPLOYEES'])
   end
 
   validates :token, inclusion: { in: Feedback.users.keys }
