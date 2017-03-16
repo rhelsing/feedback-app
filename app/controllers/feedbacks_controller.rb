@@ -1,7 +1,18 @@
 class FeedbacksController < ApplicationController
   before_action :set_feedback, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD'], except: [:new, :create]
-  skip_before_filter :verify_authenticity_token
+  http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD'], except: [:new, :create, :show_by_token]
+  skip_before_action :verify_authenticity_token
+
+  def show_by_token
+    # sleep 2
+    if Feedback.where(user: Feedback.users[params["my_token"]]).present?
+      @feedbacks = Feedback.where(user: Feedback.users[params["my_token"]])
+    else
+      sleep 10
+      redirect_to :status => 404
+    end
+
+  end
 
   # GET /feedbacks
   # GET /feedbacks.json

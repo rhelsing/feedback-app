@@ -1,0 +1,5 @@
+
+<% @feedbacks.each do |f| %>
+  <h1><%= f.created_at.strftime("%m/%d/%Y") %></h1>
+  <p>GOALS: <%= f.goals_for_week %></p>
+<% end %>
