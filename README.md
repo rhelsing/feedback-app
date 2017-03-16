@@ -1,26 +1,6 @@
-# README
+#Feedback App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Concept adapted from 5-15 reports.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-http://feedback-app-dev.us-east-1.elasticbeanstalk.com
+Use figaro to mimic .env.example if you dont want to use docker
+create and modify .env locally if you want to use docker
