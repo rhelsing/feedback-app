@@ -14,6 +14,7 @@ class Feedback < ApplicationRecord
 
 
   def self.generate_token
+    #comment to rebuild
     SecureRandom.urlsafe_base64.first(8)
   end
 
