@@ -11,4 +11,10 @@ class Feedback < ApplicationRecord
   def assign_user
     self.user = Feedback.users[@token]
   end
+
+
+  def self.generate_token
+    SecureRandom.urlsafe_base64.first(8)
+  end
+
 end
