@@ -11,7 +11,7 @@
       </div>
     <% end %>
 
-    <div class="field">
+    <div class="field is-hidden">
       <label class="label">Token</label>
       <div class="control">
         <%= f.text_field :token, class: 'input is-info' %>
@@ -35,7 +35,7 @@
     <div class="field">
       <label class="label">What is one small thing (or big if you wish) that you think would make our company or your work life better/more fufilling? (Rants are welcome!)</label>
       <div class="control">
-        <%= f.text_area :something_small, size: "60x10", class: 'textarea is-info' %>
+        <%= f.text_area :something_small, size: "60x10", class: 'textarea' %>
       </div>
     </div>
 
