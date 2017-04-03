@@ -1,4 +1,5 @@
 var MyFeedbacks = (function(){
+
   $(document).on('click', '#my-feedbacks', function(){
     var val = $(this).closest('#nav').find('input').val();
     location.replace('/my_feedbacks/' + val);
@@ -16,9 +17,7 @@ var MyFeedbacks = (function(){
 
   $(document).on('turbolinks:load', function(){
     var token = $("#nav input").val();
-    console.log(token);
     $("#feedback_token").val(token);
-    console.log($("#feedback_token").val());
   });
 
 })();

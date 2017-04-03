@@ -33,6 +33,19 @@
   }
 }
 
+.hero {
+  .box {
+    .title, .subtitle, p {
+      // i know
+      color: $black !important;
+    }
+
+    .subtitle {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
 #nav {
   @extend .section;
   padding-bottom: 0px;
@@ -49,6 +62,10 @@
   &::-webkit-input-placeholder {
     color: $white;
   }
+}
+
+.hero {
+  height: 100%;
 }
 
 
