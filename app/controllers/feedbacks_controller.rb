@@ -1,5 +1,5 @@
 class FeedbacksController < ApplicationController
-  before_action :set_feedback, only: [:show, :edit, :update, :destroy]
+  before_action :set_feedback, only: [:show, :destroy]
   http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD'], except: [:new, :create, :show_by_token]
   skip_before_action :verify_authenticity_token
 
