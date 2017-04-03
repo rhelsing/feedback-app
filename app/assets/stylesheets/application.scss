@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bulma";
+
+
+.error-notification {
+  @extend .notification;
+  ul {
+    padding-top: 0.5rem;
+    padding-left: 1.5rem;
+    list-style: circle inside;
+  }
+}
+
+.content-box {
+  background-color: transparent;
+  label {
+    color: $white
+  }
+}
+
+.hero {
+  .box {
+    .title, .subtitle, p {
+      // i know
+      color: $black !important;
+    }
+
+    .subtitle {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+#nav {
+  @extend .section;
+  padding-bottom: 0px;
+  background-color: $info;
+  .field:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.input.is-transparent {
+  border-color: $white;
+  background-color: transparent;
+  color: $white;
+  &::-webkit-input-placeholder {
+    color: $white;
+  }
+}
+
+.hero {
+  height: 100%;
+}
+
+

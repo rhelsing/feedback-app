@@ -5,8 +5,8 @@ class FeedbacksController < ApplicationController
 
   def show_by_token
     # sleep 2
-    if Feedback.where(user: Feedback.users[params["my_token"]]).present?
-      @feedbacks = Feedback.where(user: Feedback.users[params["my_token"]])
+    if Feedback.where(user: Feedback.users[params[:token]]).present?
+      @feedbacks = Feedback.where(user: Feedback.users[params[:token]])
     else
       sleep 10
       redirect_to :status => 404
@@ -37,7 +37,7 @@ class FeedbacksController < ApplicationController
 
     respond_to do |format|
       if @feedback.save
-        format.html { redirect_to new_feedback_url, notice: 'Feedback was successfully created. Thanks!' }
+        format.html { redirect_to feedbacks_with_token_url(feedback_params[:token]), notice: 'Feedback was successfully created. Thanks!' }
         format.json { render :new, status: :created, location: @feedback }
       else
         format.html { render :new }
