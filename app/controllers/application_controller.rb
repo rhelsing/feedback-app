@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     if params[:token]
       @token = params[:token]
     elsif params[:feedback]
-      @token = params[:token]
+      @token = params[:feedback][:token]
     end
   end
 
