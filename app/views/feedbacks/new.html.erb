@@ -1,6 +1,10 @@
-<h1 class="title">New Feedback</h1>
-<% if notice %>
-<p class="notification is-primary"><%= notice %></p>
-<% end %>
+<div class="columns">
+  <div class="column is-6 is-offset-3">
+    <h1 class="title is-1">New Feedback</h1>
+    <% if notice %>
+    <p class="notification is-info"><%= notice %></p>
+    <% end %>
 
-<%= render 'form', feedback: @feedback %>
+    <%= render 'form', feedback: @feedback %>
+  </div>
+</div>

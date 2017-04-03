@@ -3,13 +3,42 @@
   <head>
     <title>FeedbackApp</title>
     <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="search">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-6 is-offset-3">
+          <div class="field">
+            <p class="control">
+              <input class="input is-transparent" type="text" placeholder="Your token">
+            </p>
+          </div>
+          <div class="field has-addons">
+            <p class="control">
+              <button id="new-feedback" class="button is-info is-inverted is-outlined">
+                New Feedback
+              </button>
+            </p>
+            <p class="control">
+              <button id="my-feedbacks" class="button is-info is-inverted is-outlined">
+                My Feedbacks
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <section class="hero is-info">
+      <div class="hero-body">
+        <div class="container">
+          <%= yield %>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

@@ -1,37 +1,50 @@
-<%= form_for(feedback) do |f| %>
-  <% if feedback.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+<div class="content-box">
+  <%= form_for(feedback) do |f| %>
+    <% if feedback.errors.any? %>
+      <div class="error-notification is-danger">
+        <h2><%= pluralize(feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+        <ul>
+        <% feedback.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-      <% feedback.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="field">
+      <label class="label">Token</label>
+      <div class="control">
+        <%= f.text_field :token, class: 'input is-info' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">What are your achievable goals for this week?</label>
+      <div class="control">
+        <%= f.text_area :goals_for_week, size: "60x10", class: 'textarea is-info' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Did you accomplish your goals from last week? If not, why not?</label>
+      <div class="control">
+        <%= f.text_area :last_week, size: "60x10", class: 'textarea is-info' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">What is one small thing (or big if you wish) that you think would make our company or your work life better/more fufilling? (Rants are welcome!)</label>
+      <div class="control">
+        <%= f.text_area :something_small, size: "60x10", class: 'textarea is-info' %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="field">
+        <div class="control">
+          <%= f.submit "Submit", class: 'button is-info is-inverted is-outlined is-medium' %>
+        </div>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <label class="label">Token</label>
-    <%= f.text_field :token, class: 'input' %>
-  </div>
-
-  <div class="field">
-    <label class="label">What are your achievable goals for this week?</label>
-    <%= f.text_area :goals_for_week, size: "60x10", class: 'textarea' %>
-  </div>
-
-  <div class="field">
-    <label class="label">Did you accomplish your goals from last week? If not, why not?</label>
-    <%= f.text_area :last_week, size: "60x10", class: 'textarea' %>
-  </div>
-
-  <div class="field">
-    <label class="label">What is one small thing (or big if you wish) that you think would make our company or your work life better/more fufilling? (Rants are welcome!)</label>
-    <%= f.text_area :something_small, size: "60x10", class: 'textarea' %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Submit", class: 'button is-primary is-large' %>
-  </div>
-<% end %>
+</div>
