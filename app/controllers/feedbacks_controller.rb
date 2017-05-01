@@ -1,12 +1,12 @@
 class FeedbacksController < ApplicationController
-  before_action :set_feedback, only: [:show, :edit, :update, :destroy]
+  before_action :set_feedback, only: [:show, :destroy]
   http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD'], except: [:new, :create, :show_by_token]
   skip_before_action :verify_authenticity_token
 
   def show_by_token
     # sleep 2
-    if Feedback.where(user: Feedback.users[params["my_token"]]).present?
-      @feedbacks = Feedback.where(user: Feedback.users[params["my_token"]])
+    if Feedback.where(user: Feedback.users[params[:token]]).present?
+      @feedbacks = Feedback.where(user: Feedback.users[params[:token]])
     else
       sleep 10
       redirect_to :status => 404
@@ -37,7 +37,7 @@ class FeedbacksController < ApplicationController
 
     respond_to do |format|
       if @feedback.save
-        format.html { redirect_to new_feedback_url, notice: 'Feedback was successfully created. Thanks!' }
+        format.html { redirect_to feedbacks_with_token_url(feedback_params[:token]), notice: 'Feedback was successfully created. Thanks!' }
         format.json { render :new, status: :created, location: @feedback }
       else
         format.html { render :new }

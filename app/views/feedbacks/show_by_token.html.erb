@@ -1,5 +1,13 @@
+<div class="columns">
+  <div class="column is-6 is-offset-3">
 
-<% @feedbacks.each do |f| %>
-  <h1><%= f.created_at.strftime("%m/%d/%Y") %></h1>
-  <p>GOALS: <%= f.goals_for_week %></p>
-<% end %>
+      <% @feedbacks.each do |f| %>
+        <div class="box">
+          <h2 class="title is-4"><%= f.created_at.strftime("%m/%d/%Y") %></h2>
+          <h4 class="subtitle is-6">GOALS</h4>
+          <p> <%= f.goals_for_week %> </p>
+        </div>
+      <% end %>
+
+  </div>
+</div>
